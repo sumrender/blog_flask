@@ -1,0 +1,5 @@
+add categories using tailwind flask
+to all flashing messages
+
+
+email not working

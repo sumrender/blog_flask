@@ -1,0 +1,25 @@
+go to terminal, and run python
+
+once inside python, run the following
+
+from app import db
+db.create_all()
+
+===================================
+
+// above doesn't work
+// in bash type
+flask shell
+// then type
+db.create_all()
+
+// this should create a db inside
+// instance folder
+
+
+===================================
+// open python in terminal
+
+>>> from blog import app, db
+>>> app.app_context().push()
+>>> db.create_all()

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="{{url_for('static', filename='tailwind.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <title>{% block title %} {% endblock title %} - blog</title>
+  </head>
+  <body>
+    <nav class="bg-blue-100 flex justify-between">
+      <a href="/" class="heading text-2xl p-2">Blog</a>
+      <div class="links p-2 mr-4 flex w-1/2 gap-x-2">
+        {% if current_user.is_authenticated %}
+        <a href="/post/new">new post</a>
+        <a href="/account">account</a>
+        <a href="/logout">logout</a>
+
+        {% else %}
+        <a href="/register">register</a>
+        <a href="/login">login</a>
+
+        {% endif %}
+      </div>
+    </nav>
+    <div class="flash-messages">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert">{{message}}</div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+    {% block body %} {% endblock body %}
+  </body>
+</html>

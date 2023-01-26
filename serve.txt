@@ -1,0 +1,18 @@
+// in bash terminal set
+export FLASK_APP=main.py
+
+// then just run 
+flask run
+// this will start the server
+
+// set debug = true
+export FLASK_DEBUG=1
+
+
+// =======================
+// or if you don't wanna make env var
+
+just write this at the bottom of the file
+
+if __name__ == '__main__:
+  app.run(debug=True)
