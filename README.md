@@ -1,1 +1,8 @@
 # blog_flask
+
+.env variables
+
+EMAIL_USER
+EMAIL_PASSWORD
+SECRET_KEY
+SQLALCHEMY_DATABASE_URI
