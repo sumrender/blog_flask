@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  width: 100vw;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+}
+
+.body-container {
+  margin-top: 80px;
+}
+
+.navbar-item {
+  margin: 2px;
+}
+
+.heading {
+  color: black;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.heading-container {
+  text-decoration: none;
+  display: flex;
+  border: 2px solid black;
+  width: 250px;
+}
+
+.bookworm-icon {
+  height: 50px;
+}
+
+.navlinks-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navlink {
+  text-decoration: none;
+  color: black;
+  border-right: 2px solid black;
+  padding-right: 15px;
+  font-weight: bold;
+  font-size: 13px;
+  width: 70px;
+  text-align: center;
+}
+
+.flash-messages {
+  padding-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message {
+  width: 350px;
+  padding: 3px;
+}
+
+.info {
+  background-color: #17a2b8 !important;
+  color: white;
+}
+
+.success {
+  background-color: #28a745 !important;
+  color: white;
+}
+
+.danger {
+  background-color: #dc3545 !important;
+  color: white;
+}
+
+.warning {
+  background-color: #ffc107 !important;
+}

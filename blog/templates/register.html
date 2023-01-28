@@ -1,8 +1,10 @@
+<link rel="stylesheet" href="{{url_for('static', filename='register.css')}}" />
+
 {% extends 'layout.html' %} {% block title %} Register {% endblock title %} {%
 block body %}
 
 <div class="register">
-  <form action="" method="post">
+  <form class="register-form" action="" method="post">
     {{form.hidden_tag()}}
     <div class="form-group">
       {{form.username.label(class="form-username")}}
@@ -34,11 +36,13 @@ block body %}
       <span>{{error}}</span>
       {% endfor %} {% endif %}
     </div>
-    <div class="form-group">{{form.submit()}}</div>
+    <div class="form-group submit">{{form.submit()}}</div>
   </form>
   <div class="already-account">
-    <p>Already have an account? {{" "}}</p>
-    <a href="/login">login</a>
+    <p>
+      Already have an account? &nbsp;
+      <span><a class="signin-link" href="/login">Sign In</a></span>
+    </p>
   </div>
 </div>
 

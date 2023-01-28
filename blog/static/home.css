@@ -1,0 +1,92 @@
+.home {
+  margin: 3px;
+}
+
+.author-details {
+  padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.post {
+  width: 70vw;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid black;
+}
+
+.post-title {
+  padding-left: 20px;
+  text-decoration: none;
+  /* text-align: center; */
+}
+
+.post-title > p {
+  text-decoration: underline;
+  padding-top: 10px;
+  color: black;
+  font-size: 30px;
+}
+
+.post-metadata {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.post-metadata > {
+  text-decoration: none;
+}
+
+.author {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.user-img {
+  width: 40px;
+  border-radius: 100%;
+}
+
+.date-posted {
+  font-size: small;
+}
+
+.post-content {
+  padding: 20px;
+}
+
+.read-more > a {
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding-bottom: 20px;
+}
+
+.page-num {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.current {
+  background-color: black;
+  color: white;
+}

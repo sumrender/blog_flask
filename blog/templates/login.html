@@ -1,8 +1,10 @@
-{% extends 'layout.html' %} {% block title %} Login {% endblock title %} {%
+<link rel="stylesheet" href="{{url_for('static', filename='login.css')}}" />
+
+{% extends 'layout.html' %} {% block title %} Sign In {% endblock title %} {%
 block body %}
 
 <div class="login">
-  <form action="" method="post">
+  <form class="login-form" action="" method="post">
     {{form.hidden_tag()}}
     <div class="form-group">
       {{form.email.label(class="form-email")}}
@@ -18,17 +20,25 @@ block body %}
       {% endfor %} {% endif %}
     </div>
     <div class="form-group">
-      {{form.remember.label()}}
-      {{form.remember()}}
+      <div class="">{{form.remember.label()}} {{form.remember()}}</div>
     </div>
-    <div class="form-group">{{form.submit()}}</div>
+    <div class="form-group submit">{{form.submit()}}</div>
   </form>
   <div class="forgot-password">
-    <a href="{{url_for('user.reset_request')}}">Forgot Password? {{" "}}</a>
+    <p>
+      Forgot Password? &nbsp; &nbsp; &nbsp; &nbsp;
+      <span
+        ><a class="signup-link" href="{{url_for('user.reset_request')}}"
+          >Click here</a
+        ></span
+      >
+    </p>
   </div>
   <div class="create-account">
-    <p>Create a new account? {{" "}}</p>
-    <a href="/register">sign up now</a>
+    <p>
+      Create a new account? {{" "}}
+      <span><a class="signup-link" href="/register">Sign Up</a></span>
+    </p>
   </div>
 </div>
 

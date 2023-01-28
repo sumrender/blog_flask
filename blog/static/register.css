@@ -1,0 +1,41 @@
+.register {
+  margin: 50px;
+  margin-top: 60px;
+  padding: 50px;
+  border-bottom: 2px solid black;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.form-group > input {
+  width: 250px;
+  border: 2px solid black;
+}
+
+.submit > input {
+  width: 100%;
+  padding: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.already-account {
+  margin-top: 20px;
+}
+
+.signin-link {
+  color: black;
+  font-weight: bold;
+}

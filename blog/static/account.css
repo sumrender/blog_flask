@@ -1,0 +1,79 @@
+.whitespace {
+  height: 50px;
+  background-color: white;
+}
+
+.account {
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-img {
+  width: 300px;
+  border-radius: 100%;
+}
+
+.user-details {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.detail-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-heading {
+  margin-top: 70px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.account-update {
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.form-group > input {
+  width: 250px;
+  border: 2px solid black;
+  padding: 1px;
+}
+
+.update-pic > input {
+  border: none;
+}
+
+.submit > input {
+  width: 100%;
+  padding: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}

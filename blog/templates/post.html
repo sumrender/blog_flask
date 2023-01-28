@@ -1,26 +1,36 @@
+<link rel="stylesheet" href="{{url_for('static', filename='post.css')}}" />
+
 {% extends 'layout.html' %} {% block title %} Home {% endblock title %} {% block
 body %}
 <div class="post">
-  <div class="post text-center border-red-300 border-2 m-1">
-    <div class="post-actions">
-      {% if post.author == current_user %}
-      <a href="{{url_for('post.update_post', post_id=post.id)}}">Update Post</a>
-      <a href="{{url_for('post.delete_post', post_id=post.id)}}">Delete Post</a>
-      {% endif %}
-    </div>
-    <div class="post-metadata">
-      <a href="{{url_for('user.user_posts', username=post.author.username)}}">
+  <a class="post-title" href="{{url_for('post.view_post', post_id=post.id)}}">
+    <p>{{post.title}}</p>
+  </a>
+  <div class="post-metadata">
+    <a href="{{url_for('user.user_posts', username=post.author.username)}}">
+      <div class="author">
         <img
-          width="20px"
+          class="user-img"
           src="{{url_for('static', filename='profile_pics/'+post.author.image_file)}}"
           alt="author"
         />
-        {{post.author.username}}
-      </a>
-      <p class="text-sm">{{post.date_posted.strftime('%Y-%m-%d')}}</p>
-    </div>
-    <p class="text-lg">{{post.title}}</p>
-    <p class="post-content">{{post.content}}</p>
+        <div class="author-item">
+          <p>{{post.author.username}}</p>
+          <p class="date-posted">{{post.date_posted.strftime('%Y-%m-%d')}}</p>
+        </div>
+      </div>
+    </a>
+      <div class="post-actions">
+    {% if post.author == current_user %}
+    <a href="{{url_for('post.update_post', post_id=post.id)}}">Update Post</a>
+    <a href="{{url_for('post.delete_post', post_id=post.id)}}">Delete Post</a>
+    {% endif %}
+  </div>
+  </div>
+  <div class="post-content">
+    <p class="">
+      {{post.content}}
+    </p>
   </div>
 </div>
 
