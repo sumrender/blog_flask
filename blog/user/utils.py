@@ -4,7 +4,7 @@ from flask_login import current_user
 from PIL import Image
 import smtplib
 from email.mime.text import MIMEText
- 
+
 def save_picture(form_picture):
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = current_user.username + f_ext
@@ -34,7 +34,7 @@ def send_mail(subject, message, sender, password, recipient):
     server.login(sender, password)
     # Gives Send Mail Request to SMTP Server
     server.sendmail(sender, recipient, email_body.as_string())
-    # Quit or Logout from SMTP Server 
+    # Quit or Logout from SMTP Server
     server.quit()
     print("email sent successfully")
   except:
@@ -44,12 +44,13 @@ def send_reset_email(user):
     token = user.get_reset_token()
     subject = "Reset Password Link"
     message = f'''To reset your password, visit the following
-link: {url_for('user.reset_token', token=token, _external=True)}    
+link: {url_for('user.reset_token', token=token, _external=True)}
 If you did not make this request, then simply ignore this email and no changes will be made.
 '''
     sender=os.environ.get('EMAIL_USER')
-    password=os.environ.get('EMAIL_PASSWORD')    
+    password=os.environ.get('EMAIL_PASSWORD')
+    print("sender of email => ", sender)
     send_mail(subject, message, sender, password, user.email)
-    print("http://localhost:5000" + url_for('user.reset_token', token=token))
+    print("https://booklists.pythonanywhere.com" + url_for('user.reset_token', token=token))
 
 

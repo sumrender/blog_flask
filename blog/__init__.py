@@ -5,7 +5,8 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from dotenv import load_dotenv
 
-load_dotenv()
+print(load_dotenv("/home/booklists/blog_flask/.env"))
+print(os.environ)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'WE4U932U4DJKDFAJF993'
@@ -28,3 +29,7 @@ app.register_blueprint(user)
 app.register_blueprint(post)
 app.register_blueprint(main)
 app.register_blueprint(error)
+
+print("=================  Application is live! ====================")
+sender=os.environ.get('EMAIL_USER')
+print(f"current email sender: {sender}")
