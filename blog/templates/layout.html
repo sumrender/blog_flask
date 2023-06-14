@@ -8,25 +8,31 @@
       rel="stylesheet"
       href="{{url_for('static', filename='layout.css')}}"
     />
-    <title>{% block title %} {% endblock title %} - blog</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{url_for('static', filename='bookworm.png')}}"
+    />
+    <title>{% block title %} {% endblock title %}</title>
   </head>
   <body>
     <nav class="navbar">
-      <a href="/" class="navbar-item heading-container">
+      <a href="/" class="navbar-item">
         <img
-          class="bookworm-icon"
+          class="logo"
           src="{{url_for('static', filename='bookworm.png')}}"
           alt="bookworm"
         />
-        <p class="heading">BookWorm</p></a
-      >
+      </a>
       <div class="navbar-item navlinks-container">
         {% if current_user.is_authenticated %}
+        <a class="navlink" href="/posts">All Posts</a>
         <a class="navlink" href="/post/new">New Post</a>
         <a class="navlink" href="/account">My Account</a>
         <a class="navlink" href="/logout">Log out</a>
 
         {% else %}
+        <a class="navlink" href="/posts">All Posts</a>
         <a class="navlink" href="/register">Sign Up</a>
         <a class="navlink" href="/login">Sign In</a>
 

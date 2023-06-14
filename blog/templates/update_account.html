@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="{{url_for('static', filename='account.css')}}" />
+
+{% extends 'layout.html' %} {% block title %} Account {% endblock title %} {%
+block body %}
+
+<div class="container">
+  <form
+    class="update-form"
+    action=""
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {{form.hidden_tag()}}
+    <p class="update-heading">Update your details</p>
+    <div class="form-group">
+      {{form.username.label(class="form-username")}}
+      {{form.username(class="form-username")}} {% if form.username.errors %} {%
+      for error in form.username.errors %}
+      <span>{{error}}</span>
+      {% endfor %} {% endif %}
+    </div>
+    <div class="form-group">
+      {{form.email.label(class="form-email")}}
+      {{form.email(class="form-email")}} {% if form.email.errors %} {% for error
+      in form.email.errors %}
+      <span>{{error}}</span>
+      {% endfor %} {% endif %}
+    </div>
+    <div class="form-group update-pic">
+      {{form.picture.label()}} {{form.picture()}} {% if form.picture.errors %}
+      {% for error in errors %}
+      <span>{{error}}</span>
+      {% endfor %} {% endif %}
+    </div>
+    <div class="submit">{{form.submit()}}</div>
+  </form>
+</div>
+
+{% endblock body %}

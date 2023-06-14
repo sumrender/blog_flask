@@ -2,12 +2,13 @@
 
 {% extends 'layout.html' %} {% block title %} Home {% endblock title %} {% block
 body %}
-<div class="post">
-  <a class="post-title" href="{{url_for('post.view_post', post_id=post.id)}}">
-    <p>{{post.title}}</p>
-  </a>
-  <div class="post-metadata">
-    <a href="{{url_for('user.user_posts', username=post.author.username)}}">
+
+<div class="post-container">
+  <div class="post">
+    <a class="post-title" href="{{url_for('post.view_post', post_id=post.id)}}">
+      <p>{{post.title}}</p>
+    </a>
+    <div class="post-metadata">
       <div class="author">
         <img
           class="user-img"
@@ -15,22 +16,29 @@ body %}
           alt="author"
         />
         <div class="author-item">
-          <p>{{post.author.username}}</p>
+          <a
+            href="{{url_for('user.user_posts', username=post.author.username)}}"
+          >
+            <p class="author-name">{{post.author.username}}</p></a
+          >
           <p class="date-posted">{{post.date_posted.strftime('%Y-%m-%d')}}</p>
         </div>
       </div>
-    </a>
+
       <div class="post-actions">
-    {% if post.author == current_user %}
-    <a href="{{url_for('post.update_post', post_id=post.id)}}">Update Post</a>
-    <a href="{{url_for('post.delete_post', post_id=post.id)}}">Delete Post</a>
-    {% endif %}
-  </div>
-  </div>
-  <div class="post-content">
-    <p class="">
-      <pre>{{post.content}}</pre>
-    </p>
+        {% if post.author == current_user %}
+        <a href="{{url_for('post.update_post', post_id=post.id)}}"
+          >Update Post</a
+        >
+        <a href="{{url_for('post.delete_post', post_id=post.id)}}"
+          >Delete Post</a
+        >
+        {% endif %}
+      </div>
+    </div>
+    <div class="post-content">
+      <p>{{post.content}}</p>
+    </div>
   </div>
 </div>
 

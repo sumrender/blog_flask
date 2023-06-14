@@ -10,7 +10,6 @@
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-
 }
 
 .form-group {
@@ -29,4 +28,15 @@
   padding: 3px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.work-in-progress {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  width: 50vw;
 }

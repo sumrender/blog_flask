@@ -5,10 +5,11 @@ block body %}
 
 <div class="register">
   <form class="register-form" action="" method="post">
+    <p class="heading">Log In</p>
+    <p class="sub-heading">Write posts about your new fav books</p>
     {{form.hidden_tag()}}
     <div class="form-group">
-      {{form.username.label(class="form-username")}}
-      {{form.username(class="form-username")}}
+      {{form.username(class="form-username", placeholder="Username")}}
       <!-- error validation -->
       {% if form.username.errors %}
       <p>username errors found</p>
@@ -17,33 +18,32 @@ block body %}
       {% endfor %} {% endif %}
     </div>
     <div class="form-group">
-      {{form.email.label(class="form-email")}}
-      {{form.email(class="form-email")}} {% if form.email.errors %} {% for error
+      {{form.email(class="form-email", placeholder="Email")}} {% if form.email.errors %} {% for error
       in form.email.errors %}
       <span>{{error}}</span>
       {% endfor %} {% endif %}
     </div>
     <div class="form-group">
-      {{form.password.label()}} {{form.password()}} {% if form.password.errors
+      {{form.password(placeholder="Password")}} {% if form.password.errors
       %} {% for error in form.password.errors %}
       <span>{{error}}</span>
       {% endfor %} {% endif %}
     </div>
     <div class="form-group">
-      {{form.confirm_password.label()}} {{form.confirm_password()}} {% if
+      {{form.confirm_password(placeholder="Confirm Password")}} {% if
       form.confirm_password.errors %} {% for error in
       form.confirm_password.errors %}
       <span>{{error}}</span>
       {% endfor %} {% endif %}
     </div>
-    <div class="form-group submit">{{form.submit()}}</div>
+    <div class="submit">{{form.submit()}}</div>
+    <div class="already-account">
+      <p>
+        Already have an account? &nbsp;
+        <span><a class="signin-link" href="/login">Sign In</a></span>
+      </p>
+    </div>
   </form>
-  <div class="already-account">
-    <p>
-      Already have an account? &nbsp;
-      <span><a class="signin-link" href="/login">Sign In</a></span>
-    </p>
-  </div>
 </div>
 
 {% endblock body %}

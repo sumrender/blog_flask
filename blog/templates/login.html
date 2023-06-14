@@ -5,41 +5,39 @@ block body %}
 
 <div class="login">
   <form class="login-form" action="" method="post">
+    <p class="heading">Log In</p>
+    <p class="sub-heading">Write posts about your new fav books</p>
     {{form.hidden_tag()}}
     <div class="form-group">
-      {{form.email.label(class="form-email")}}
-      {{form.email(class="form-email")}} {% if form.email.errors %} {% for error
-      in form.email.errors %}
+      {{form.email(class="form-email", placeholder="Email")}} {% if
+      form.email.errors %} {% for error in form.email.errors %}
       <span>{{error}}</span>
       {% endfor %} {% endif %}
     </div>
     <div class="form-group">
-      {{form.password.label()}} {{form.password()}} {% if form.password.errors
-      %} {% for error in form.password.errors %}
+      {{form.password(placeholder="Password")}} {% if form.password.errors %} {%
+      for error in form.password.errors %}
       <span>{{error}}</span>
       {% endfor %} {% endif %}
     </div>
     <div class="form-group">
-      <div class="">{{form.remember.label()}} {{form.remember()}}</div>
+      <div class="remember-me">
+        {{form.remember()}} {{form.remember.label()}}
+      </div>
     </div>
-    <div class="form-group submit">{{form.submit()}}</div>
-  </form>
-  <div class="forgot-password">
-    <p>
-      Forgot Password? &nbsp; &nbsp; &nbsp; &nbsp;
-      <span
-        ><a class="signup-link" href="{{url_for('user.reset_request')}}"
-          >Click here</a
-        ></span
+    <div class="submit">{{form.submit()}}</div>
+    <div class="forgot-password">
+      <a class="signup-link" href="{{url_for('user.reset_request')}}">
+        <i>Forgot Password?</i></a
       >
-    </p>
-  </div>
-  <div class="create-account">
-    <p>
-      Create a new account? {{" "}}
-      <span><a class="signup-link" href="/register">Sign Up</a></span>
-    </p>
-  </div>
+    </div>
+    <div class="create-account">
+      <p>
+        New here? {{" "}}
+        <span><a class="signup-link" href="/register">Sign Up</a></span>
+      </p>
+    </div>
+  </form>
 </div>
 
 {% endblock body %}

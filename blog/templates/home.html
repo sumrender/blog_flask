@@ -1,53 +1,36 @@
 <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}" />
 {% extends 'layout.html' %} {% block title %} Home {% endblock title %} {% block
 body %}
-<div class="home">
-  {% for post in posts.items %}
-  <div class="post">
-    <a class="post-title" href="{{url_for('post.view_post', post_id=post.id)}}">
-      <p>{{post.title}}</p>
-    </a>
-    <div class="post-metadata">
-      <a href="{{url_for('user.user_posts', username=post.author.username)}}">
-        <div class="author">
-          <img 
-            class="user-img"
-            src="{{url_for('static', filename='profile_pics/'+post.author.image_file)}}"
-            alt="author"
-          />
-          <div class="author-item">
-            <p>{{post.author.username}}</p>
-            <p class="date-posted">{{post.date_posted.strftime('%Y-%m-%d')}}</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="post-content">
-      <p class="">
-        {{post.content[:300]}} &nbsp;
 
-        <span class="read-more">
-          <a href="{{url_for('post.view_post', post_id=post.id)}}">
-            read more...
-          </a>
-        </span>
+<div class="home">
+  <div class="hero-container">
+    <div class="hero">
+      <p class="hero-text">
+        Our place for gushing over, ranting, and calling out on books we read :)
       </p>
+      <a href="/posts" class="hero-link"
+        ><p class="hero-link-text animated-button">
+          Browse the latest posts
+          <span>
+            <img
+              class="arrow move-left"
+              src="{{url_for('static', filename='arrow.png')}}"
+              alt="arrow"
+            />
+          </span></p
+      ></a>
     </div>
   </div>
-  {% endfor %}
+  <div class="reader">
+    <img
+      class="reader-img"
+      src="{{url_for('static', filename='reader.png')}}"
+      alt="reader"
+    />
+  </div>
 </div>
-
-<div class="pages">
-  {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1,
-  right_current=2) %} {% if page_num %} {% if posts.page == page_num %}
-  <a class="current page-num" href="{{url_for('main.home', page=page_num)}}"
-    ><span><b>{{page_num}}</b></span></a
-  >
-  {% else %}
-  <a class="page-num" href="{{url_for('main.home', page=page_num)}}"
-    ><span>{{page_num}}</span></a
-  >
-  {% endif %} {% else %} ... {% endif %} {% endfor %}
+<div class="credits">
+  <div><i>designed by - Afreen</i><span class="emoji">🫶</span></div>
 </div>
 
 {% endblock body %}

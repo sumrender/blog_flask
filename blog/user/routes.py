@@ -48,6 +48,12 @@ def logout():
 @user.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
+    image_file = url_for('static', filename='profile_pics/'+current_user.image_file)
+    return render_template('account.html', image_file=image_file)
+
+@user.route('/account/update', methods=['GET', 'POST'])
+@login_required
+def update_account():
     form = UpdateAccountForm()
     if form.validate_on_submit():
         if form.picture.data:
@@ -63,7 +69,7 @@ def account():
         form.email.data = current_user.email
     
     image_file = url_for('static', filename='profile_pics/'+current_user.image_file)
-    return render_template('account.html', image_file=image_file, form=form)
+    return render_template('update_account.html', image_file=image_file, form=form)
 
 @user.route("/user/<string:username>")
 def user_posts(username):

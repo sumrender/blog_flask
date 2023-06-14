@@ -3,7 +3,7 @@ from flask import (Blueprint, redirect,
 from blog import db
 from blog.models import Post
 from flask_login import login_required, current_user
-from blog.post.forms import PostForm
+from blog.post.forms import PostForm, UpdateForm
 
 post = Blueprint('post', __name__)
 
@@ -30,7 +30,7 @@ def update_post(post_id):
     post = Post.query.get_or_404(post_id)
     if post.author != current_user:
         abort(403)
-    form = PostForm()
+    form = UpdateForm()
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data

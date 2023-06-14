@@ -1,11 +1,19 @@
-.whitespace {
-  height: 50px;
-  background-color: white;
+.container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .account {
+  background-color: #7c7cef;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.7);
   padding: 20px;
   width: 400px;
+  height: 440px;
   margin: 0 auto;
   border: 2px solid black;
   display: flex;
@@ -16,16 +24,57 @@
 .user-img {
   width: 300px;
   border-radius: 100%;
+  border: 5px solid white;
 }
 
 .user-details {
-  margin-top: 20px;
+  padding-top: 20px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.username,
+.email {
+  width: 200px;
 }
 
 .detail-group {
   display: flex;
   justify-content: space-between;
+}
+
+.update-btn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.update-btn > button {
+  background-color: #dbad38;
+  font-size: 17px;
+  color: white;
+  margin: 20px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.update-form {
+  background-color: #7c7cef;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .update-heading {
@@ -36,26 +85,9 @@
   font-weight: bold;
 }
 
-.account-update {
-  padding: 20px;
-  width: 400px;
-  margin: 0 auto;
-  margin-bottom: 70px;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.account-update-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-
-}
-
 .form-group {
+  margin: 10px 0;
+  width: 400px;
   display: flex;
   justify-content: space-between;
   font-weight: bold;
@@ -63,17 +95,25 @@
 
 .form-group > input {
   width: 250px;
-  border: 2px solid black;
-  padding: 1px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 5px;
 }
 
 .update-pic > input {
   border: none;
+  padding-left: 20px;
 }
 
 .submit > input {
-  width: 100%;
-  padding: 3px;
+  background-color: #dbad38;
+  font-size: 17px;
+  color: white;
+  margin: 20px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 }
