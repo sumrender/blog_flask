@@ -12,7 +12,6 @@
 
 .hero {
   padding-left: 70px;
-  /* background-color: red; */
 }
 
 .hero-text {
@@ -107,4 +106,10 @@
   .home {
     flex-direction: column;
   }
+
+  .hero-text {
+    max-width: 80vw;
+  }
+
+
 }

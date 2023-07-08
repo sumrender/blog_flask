@@ -78,3 +78,32 @@
   font-family: "Arial";
   font-size: 20px;
 }
+
+.post-content pre {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .post {
+    width: 90vw;
+    padding: 1px;
+  }
+
+  .post-title > p {
+    font-size: 20px;
+  }
+
+  .author {
+    font-size: 20px;
+  }
+
+  .date-posted {
+    font-size: 15px;
+  }
+
+  .post-content {
+    padding: 10px;
+    font-family: "Arial";
+    font-size: 14px;
+  }
+}
